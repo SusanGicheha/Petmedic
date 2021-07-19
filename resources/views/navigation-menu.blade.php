@@ -5,16 +5,22 @@
             <div class="flex">
                 <!-- Logo -->
                 <div class="flex-shrink-0 flex items-center">
-                    <a href="{{ route('dashboard') }}">
-                        <x-jet-application-mark class="block h-9 w-auto" />
+                <img src="https://www.canva.com/design/DAEj-cGHLrg/8IdXoBklk0m26_VklvENeQ/edit" class="ml-4 block h-30 w-auto py-4" alt="PET MEDIC" width="150" />  
                     </a>
                 </div>
 
                 <!-- Navigation Links -->
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
-                        {{ __('Dashboard') }}
+                <div class="hidden space-x-8   sm:ml-10 sm:flex flex justify-center">
+                    <x-jet-nav-link class="link" href="#" >
+                        {{ __('Home') }}
                     </x-jet-nav-link>
+                    <x-jet-nav-link class="link" href="#" >
+                        {{ __('About') }}
+                    </x-jet-nav-link>
+                    <x-jet-nav-link class="link" href="#" >
+                        {{ __('Contact Us') }}
+                    </x-jet-nav-link>
+                    
                 </div>
             </div>
 
@@ -138,10 +144,11 @@
     <!-- Responsive Navigation Menu -->
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
-            <x-jet-responsive-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
-                {{ __('Dashboard') }}
+            <x-jet-responsive-nav-link href="#">
+                {{ __('Home') }}
             </x-jet-responsive-nav-link>
         </div>
+       
 
         <!-- Responsive Settings Options -->
         <div class="pt-4 pb-1 border-t border-gray-200">

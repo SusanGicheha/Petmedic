@@ -1,7 +1,8 @@
 <x-guest-layout>
     <x-jet-authentication-card>
         <x-slot name="logo">
-            <x-jet-authentication-card-logo />
+        <img src="{{asset('/image/PET MEDIC VETERINARY (1).png') }}" alt="logo" class="img-logo-w3" style="width:200px; height:200px;"  ></a>
+
         </x-slot>
 
         <x-jet-validation-errors class="mb-4" />
@@ -91,9 +92,19 @@
                     {{ __('Already registered?') }}
                 </a>
 
-                <x-jet-button class="ml-4">
+                
+                <x-jet-button class="ml-4" onclick="myFunction()">
+                    
+                        
                     {{ __('Register') }}
+                    
                 </x-jet-button>
+                <script>
+                    function myFunction(){
+                        alert("Registration successful");
+                    }
+                    </script>
+
             </div>
         </form>
     </x-jet-authentication-card>

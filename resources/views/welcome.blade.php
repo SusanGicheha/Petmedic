@@ -112,9 +112,9 @@
         <div class="main">
             <h1 class="title">Pet Medic Medical Diary</h1>
             <p class="subtitle">Your pets medical diary</p>
-            <p class="text">We created a platform that makes it easy for you to keep your pets medical records just at the tap of a button.</p>
-            <p class="text1">Your pet doesn't have an account? No need to worry, Just sign up below.</p>
-            <button class="action"> <a href="{{ route('register') }}" >Register</a></button>
+            <p class="text">This is a platform that makes it easy for you to keep your pets medical records just at the tap of a button.</p>
+            <p class="text1">Book appointments and stay on your pet's vaccination schedule at the comfort of your home</p>
+  
              
     
         </div>
