@@ -12,7 +12,7 @@
                 font-family: 'Nunito', sans-serif;
                 background-repeat: no-repeat;
                
-                background-size: 1500px;
+                background-size: 1000px;
             }
             .content{
               border-color:black;
@@ -22,9 +22,10 @@
            .main{
             font-family: 'Montserrat', sans-serif;
             width:auto;
-	        height: 400px;
+	        height: 590px;
             line-height: 1rem;
-            background-image: url('image/homepage.png');
+            background: url('image/dog2 (1).png');
+            
            background-color: white;
             border-width: 2px;
             margin-top: 1.75rem;
@@ -52,6 +53,9 @@
 <x-app-layout>
  
 </x-app-layout>  
+<br>
+<br>
+<br>
     <div class="py-12">
        
         <div>

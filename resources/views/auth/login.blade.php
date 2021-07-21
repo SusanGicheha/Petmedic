@@ -1,5 +1,8 @@
+
+
+
 <x-guest-layout>
-    <x-jet-authentication-card>
+    <x-jet-authentication-card >
         <x-slot name="logo">
         <img src="{{asset('/image/PET MEDIC VETERINARY (1).png') }}" alt="logo" class="img-logo-w3" style="width:100px; height:100px;"  ></a>
 
@@ -12,6 +15,7 @@
                 {{ session('status') }}
             </div>
         @endif
+        
 
         <form method="POST" action="{{ route('login') }}">
             @csrf
@@ -45,5 +49,6 @@
                 </x-jet-button>
             </div>
         </form>
+        
     </x-jet-authentication-card>
 </x-guest-layout>

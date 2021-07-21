@@ -1,4 +1,4 @@
-<nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
+<nav x-data="{ open: false }" style="background: #ecc5c0;">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
@@ -11,13 +11,13 @@
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8   sm:ml-10 sm:flex flex justify-center">
-                    <x-jet-nav-link class="link" href="#" >
+                    <x-jet-nav-link class="link text-lg text-gray-900 font-black" href="#" > 
                         {{ __('Home') }}
                     </x-jet-nav-link>
-                    <x-jet-nav-link class="link" href="#" >
+                    <x-jet-nav-link class="link text-lg text-gray-900 font-black" href="#" >
                         {{ __('About') }}
                     </x-jet-nav-link>
-                    <x-jet-nav-link class="link" href="#" >
+                    <x-jet-nav-link class="link text-lg text-gray-900 font-black" href="#" >
                         {{ __('Contact Us') }}
                     </x-jet-nav-link>
                     
@@ -44,7 +44,7 @@
                             <x-slot name="content">
                                 <div class="w-60">
                                     <!-- Team Management -->
-                                    <div class="block px-4 py-2 text-xs text-gray-400">
+                                    <div class="block px-4 py-2 text-lg text-gray-900">
                                         {{ __('Manage Team') }}
                                     </div>
 
@@ -98,7 +98,7 @@
 
                         <x-slot name="content">
                             <!-- Account Management -->
-                            <div class="block px-4 py-2 text-xs text-gray-400">
+                            <div class="block px-4 py-2 text-xs text-gray-900">
                                 {{ __('Manage Account') }}
                             </div>
 

@@ -6,7 +6,7 @@
         </x-slot>
 
         <x-jet-validation-errors class="mb-4" />
-        <h1 align = "center">Register your details to open an account for your pet. </h1>
+        <h1 align = "center"><b><strong>Register your details to open an account for your pet.</strong><b> </h1>
         <br>
 
         <form method="POST" action="{{ route('register') }}">
@@ -43,7 +43,7 @@
             </div>    
             <br>
 
-            <h1 class="underline text-lg text-gray-600 hover:text-gray-900" align="center">ENTER YOUR PETS' DETAILS</h1>
+            <h1 align="center"><b><strong>Enter your pets' details</strong><b></h1>
 
 <div class="mt-4">
     <x-jet-label for="pet_name" value="{{ __('Pet name') }}" />
