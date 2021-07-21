@@ -65,6 +65,26 @@
             <x-jet-input id="email" type="email" class="mt-1 block w-full" wire:model.defer="state.email" />
             <x-jet-input-error for="email" class="mt-2" />
         </div>
+
+        <div class="col-span-6 sm:col-span-4">
+            <x-jet-label for="phone_no" value="{{ __('Phone Number') }}" />
+            <x-jet-input id="phone_no" type="tel" class="mt-1 block w-full" wire:model.defer="state.phone_no" autocomplete="phone_no" />
+            <x-jet-input-error for="phone_no" class="mt-2" />
+        </div>
+
+        <div class="col-span-6 sm:col-span-4">
+            <x-jet-label for="pet_name" value="{{ __('Pet Name') }}" />
+            <x-jet-input id="pet_name" type="text" class="mt-1 block w-full" wire:model.defer="state.pet_name" autocomplete="pet_name" />
+            <x-jet-input-error for="pet_name" class="mt-2" />
+        </div>
+
+        <div class="col-span-6 sm:col-span-4">
+            <x-jet-label for="pet_breed" value="{{ __('Pet Breed') }}" />
+            <x-jet-input id="pet_breed" type="text" class="mt-1 block w-full" wire:model.defer="state.pet_breed" autocomplete="pet_breed" />
+            <x-jet-input-error for="pet_breed" class="mt-2" />
+        </div>
+
+       
     </x-slot>
 
     <x-slot name="actions">
