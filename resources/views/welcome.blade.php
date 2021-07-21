@@ -25,7 +25,7 @@
                
                 height: 70px;
                 width: 100%;
-                background-color: white;
+                background-color:transparent;
                 
             }
            .main{
@@ -82,6 +82,13 @@
             border-width: 2px;
 
         }
+        .auth
+        {
+            font-style: normal;
+            font-weight: 800;
+            margin-left: 1rem;
+            margin-right: 1rem;
+        }
        
          
         </style>
@@ -90,17 +97,17 @@
     <body>
         
     <header class = "header">
-    <img src="http://acmelogos.com/images/logo-1.svg" class="ml-4 block h-30 w-auto py-4" alt="PET MEDIC" width="150" />  
+    
         <div class="" >
             @if (Route::has('login'))
                 <div class="fixed top-0 right-0 px-6 py-4 flex  ">
                     @auth
-                        <a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 underline">Dashboard</a>
+                        <a href="{{ url('/dashboard') }}" class="text-sm text-white underline">Dashboard</a>
                     @else
-                        <a href="{{ route('login') }}" class="text-xl mt-4 text-gray-700">Log in</a>
+                        <a href="{{ route('login') }}" class="auth">Log in</a>
 
                         @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="ml-4 mt-4 text-xl text-gray-700">Register</a>
+                            <a href="{{ route('register') }}" class="auth">Register</a>
                         @endif
                     @endauth
                 </div>

@@ -5,8 +5,8 @@
             <div class="flex">
                 <!-- Logo -->
                 <div class="flex-shrink-0 flex items-center">
-                <img src="https://www.canva.com/design/DAEj-cGHLrg/8IdXoBklk0m26_VklvENeQ/edit" class="ml-4 block h-30 w-auto py-4" alt="PET MEDIC" width="150" />  
-                    </a>
+                <img src="{{asset('/image/PET MEDIC VETERINARY (1).png') }}" alt="logo" class="img-logo-w3" style="width:50px; height:50px;"  >
+
                 </div>
 
                 <!-- Navigation Links -->
