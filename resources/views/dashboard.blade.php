@@ -10,9 +10,8 @@
         
             .body {
                 font-family: 'Nunito', sans-serif;
-                background-repeat: no-repeat;
-               
-                background-size: 1000px;
+                background-repeat: no-repeat; 
+                background-size: cover;
             }
             .content{
               border-color:black;
@@ -22,13 +21,13 @@
            .main{
             font-family: 'Montserrat', sans-serif;
             width:auto;
-	        height: 590px;
+	        height: 580px;
             line-height: 1rem;
             background: url('image/dog2 (1).png');
             
            background-color: white;
             border-width: 2px;
-            margin-top: 1.75rem;
+            margin-top: 0.75rem;
             border-style: double;
            
             text-align: center;
@@ -86,6 +85,7 @@
 <x-jet-button class="mt-6">Medical Records</x-jet-button>
 <x-jet-button class="mt-4">Book Appointment</x-jet-button>
 <x-jet-button class="mt-4">Upcoming Vaccinations</x-jet-button>
+
 
 
 
