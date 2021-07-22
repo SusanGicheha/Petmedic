@@ -212,12 +212,12 @@ footer p
             @if (Route::has('login'))
                 <div class="fixed top-0 right-0 px-6 py-4 flex  ">
                     @auth
-                        <a href="{{ url('/dashboard') }}" class="text-sm text-white underline">Dashboard</a>
+                        <a href="{{ url('/dashboard') }}" class="text-sm text-white  underline">Dashboard</a>
                     @else
-                        <a href="{{ route('login') }}" class="auth">Log in</a>
+                        <a href="{{ route('login') }}" class="auth text-lg ">Log in</a>
 
                         @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="auth">Register</a>
+                            <a href="{{ route('register') }}" class="auth text-lg ">Register</a>
                         @endif
                     @endauth
                 </div>
@@ -259,8 +259,7 @@ footer p
         <br>
         <br>
         <br>
-        <br>
-        <br>
+        
 
         <footer class="footer">
         <div class="container bottom_border">
@@ -269,9 +268,9 @@ footer p
         <h5 class="headin5_amrc col_white_amrc pt2">Find us</h5>
 
         <p class="mb10">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
-        <p><i class="fa fa-location-arrow"></i> 9878/25 sec 9 rohini 35 </p>
+        <p><i class="fa fa-location-arrow"></i>Nairobi,Kenya</p>
         <p><i class="fa fa-phone"></i>  +91-9999878398  </p>
-        <p><i class="fa fa fa-envelope"></i> info@example.com  </p>
+        <p><i class="fa fa fa-envelope"></i> petmedic@logistics.com  </p>
 
       
 
@@ -296,9 +295,9 @@ footer p
 <!--headin5_amrc ends here-->
 
 <ul class="footer_ul2_amrc">
-<li><a href="#"><i class="fab fa-twitter fleft padding-right"></i> </a><p>Lorem Ipsum is simply dummy text of the printing...<a href="#">https://www.lipsum.com/</a></p></li>
-<li><a href="#"><i class="fab fa-twitter fleft padding-right"></i> </a><p>Lorem Ipsum is simply dummy text of the printing...<a href="#">https://www.lipsum.com/</a></p></li>
-<li><a href="#"><i class="fab fa-twitter fleft padding-right"></i> </a><p>Lorem Ipsum is simply dummy text of the printing...<a href="#">https://www.lipsum.com/</a></p></li>
+<li><a href="#"><i class="fab fa-twitter fleft padding-right"></i> </a><p>Follow us on Twitter<a href="#">https://www.lipsum.com/</a></p></li>
+<li><a href="#"><i class="fab fa-instagram fleft padding-right"></i> </a><p>Follow us on Instagram<a href="#">https://www.lipsum.com/</a></p></li>
+<li><a href="#"><i class="fab fa-quora fleft padding-right"></i> </a><p>Follow us on Quora<a href="#">https://www.lipsum.com/</a></p></li>
 </ul>
 <!--footer_ul2_amrc ends here-->
 </div>
