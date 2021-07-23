@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\AppointmentController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,3 +24,10 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 })->name('dashboard');
 
 Route::get('/dashboard',[UserController::class,'show']);
+
+Route::get('appointment',function()
+{
+    return view('appointments.appointment');
+}
+
+);

@@ -11,7 +11,7 @@
             .body {
                 font-family: 'Nunito', sans-serif;
                 background-repeat: no-repeat; 
-                background-size: cover;
+                background-size: 2000px;
             }
             .content{
               border-color:black;
@@ -67,6 +67,7 @@
             <table align="center" >
         <br>
         <h1 class="text-center"><b>{{ $users->pet_name }}'s details </b></h1>
+
                
                 <div style="border-color:black; margin-top:10px; ">
                 <table class="content" style="width:50%"  align="center" >
@@ -82,9 +83,9 @@
   </tr>
 </table> 
 
-<x-jet-button class="mt-6">Medical Records</x-jet-button>
-<x-jet-button class="mt-4">Book Appointment</x-jet-button>
-<x-jet-button class="mt-4">Upcoming Vaccinations</x-jet-button>
+<x-jet-button class="mt-6" >Medical Records</x-jet-button>
+<x-jet-nav-link class="mt-4" href="#" >Book Appointment</x-jet-nav-link>
+<x-jet-button class="mt-4" >Upcoming Vaccinations</x-jet-button>
 
 
 
