@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Homepage</title>
+    <title>Home page</title>
     <style>
 
         
@@ -84,8 +84,8 @@
 </table> 
 
 <x-jet-button class="mt-6" >Medical Records</x-jet-button>
-<x-jet-nav-link class="mt-4" href="#" >Book Appointment</x-jet-nav-link>
-<x-jet-button class="mt-4" >Upcoming Vaccinations</x-jet-button>
+<x-jet-button class="mt-6" href="#" >Book Appointment</x-jet-nav-link>
+<x-jet-button class="mt-6" >Upcoming Vaccinations</x-jet-button>
 
 
 

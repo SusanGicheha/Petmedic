@@ -25,9 +25,6 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 
 Route::get('/dashboard',[UserController::class,'show']);
 
-Route::get('appointment',function()
-{
-    return view('appointments.appointment');
-}
+Route::resource('appointments',\App\Http\Controllers\AppointmentController::class);
 
-);
+Route::post('appointment',[AppointmentController::class, 'addData']);

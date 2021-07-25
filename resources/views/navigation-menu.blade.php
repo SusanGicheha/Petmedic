@@ -1,8 +1,9 @@
-<nav x-data="{ open: false }" style="background: #ecc5c0;">
+<nav x-data="{ open: false }" class=" border-b border-black-100">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
             <div class="flex">
+
                 <!-- Logo -->
                 <div class="flex-shrink-0 flex items-center">
                 <img src="{{asset('/image/PET MEDIC VETERINARY (1).png') }}" alt="logo" class="img-logo-w3" style="width:50px; height:50px;"  >
@@ -11,14 +12,17 @@
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8   sm:ml-10 sm:flex flex justify-center">
-                    <x-jet-nav-link class="link text-lg text-gray-900 font-black" href="#" > 
+                    <x-jet-nav-link class="link font-bold text-base" href="#" > 
                         {{ __('Home') }}
                     </x-jet-nav-link>
-                    <x-jet-nav-link class="link text-lg text-gray-900 font-black" href="#" >
+                    <x-jet-nav-link class="link font-bold text-base" href="#" >
                         {{ __('About') }}
                     </x-jet-nav-link>
-                    <x-jet-nav-link class="link text-lg text-gray-900 font-black" href="#" >
+                    <x-jet-nav-link class="link font-bold text-base" href="#" >
                         {{ __('Contact Us') }}
+                    </x-jet-nav-link>
+                    <x-jet-nav-link class="link font-bold text-base" href="{{ route ('appointments.index') }}" :active="request()->routeIs('appointments.index')" >
+                        {{ __('Appointments') }}
                     </x-jet-nav-link>
                     
                 </div>
