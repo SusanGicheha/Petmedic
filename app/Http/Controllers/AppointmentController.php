@@ -7,6 +7,7 @@ use App\Models\Appointment;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
+
 class AppointmentController extends Controller
 {
     /**
@@ -16,9 +17,7 @@ class AppointmentController extends Controller
      */
     public function index()
     {
-        $appointments=Appointment::all();
-        $users = Auth::user();
-
+        $appointments=Appointment::where('user_id', Auth::user()->id)->get();
         return view('appointments.index',compact('appointments'));
     }
 
@@ -29,16 +28,14 @@ class AppointmentController extends Controller
      */
     public function create()
     {
-        
+      
         return view('appointments.create');
     }
 
     public function store(StoreAppointmentRequest $request)
     {
+        
         Appointment::create($request->validated());
-
-
-
         return redirect()->route('appointments.index');
     }
 
@@ -73,13 +70,14 @@ class AppointmentController extends Controller
  function addData(Request $req)
     {
         $appointments = new Appointment;
+        $appointments->name=$req->name;
         $appointments->pet_name=$req->pet_name;
-        $appointments->id=$req->id;
-        $appointments->date_of_appointment=$req->date_of_appointment;
-        $appointments->time_of_appointment=$req->time_of_appointment;
+        $appointments->user_id=$req->user_id;
+        $appointments->date_time=$req->date_time;
+       
         $appointments->phone_number=$req->phone_number;
         $appointments->email_address=$req->email_address;
-        $appointment->save();
+        $appointments->save();
         return view('appointments.index');
 
 

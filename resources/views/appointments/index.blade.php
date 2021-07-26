@@ -1,5 +1,5 @@
 <link rel="stylesheet" type="text/css" href="tables.css">
-  <<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
 
 <x-app-layout>
@@ -22,30 +22,37 @@
     <table class="text-left w-full border-collapse"> <!--Border collapse doesn't work on this site yet but it's available in newer tailwind versions -->
       <thead>
         <tr>
-          <th class="py-4 px-6 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-grey-light">Pet Name</th>
+          <th class="py-4 px-6 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-grey-light">Name</th>
+          <th class="py-4 px-6 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-grey-light">Pet</th>
           <th class="py-4 px-6 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-grey-light">Phone Number</th>
-          <th class="py-4 px-6 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-grey-light">Email</th>
-          <th class="py-4 px-6 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-grey-light">Date of Appointment</th>
-          <th class="py-4 px-6 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-grey-light">Time Of Appointment</th>
-          
+          <th class="py-4 px-6 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-grey-light">Date & Time</th>
           <th class="py-4 px-6 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-grey-light">Actions</th>
         </tr>
       </thead>
       <tbody>
+       
+      @if($appointments->count() > 0)
+        @foreach($appointments as $appointment)
         <tr class="hover:bg-grey-lighter">
-          <td class="py-4 px-6 border-b border-grey-light"></td>
-          <td class="py-4 px-6 border-b border-grey-light"></td>
-        <td class="py-4 px-6 border-b border-grey-light"></td>
-           <td class="py-4 px-6 border-b border-grey-light"></td>
-           <td class="py-4 px-6 border-b border-grey-light"></td>
+          <td class="py-4 px-6 border-b border-grey-light">{{$appointment->name}}</td>
+          <td class="py-4 px-6 border-b border-grey-light">{{$appointment->pet_name}}</td>
+          <td class="py-4 px-6 border-b border-grey-light">{{$appointment->phone_number}}</td>
+        <td class="py-4 px-6 border-b border-grey-light">{{$appointment->date_time}}</td>
+          
            <td>
-            <a href="{{ route('appointments.edit', $appointment->id) }}" class="text-grey-lighter font-bold py-1 px-3 rounded text-xs bg-green hover:bg-green-dark btn btn-info">Edit</a>
-            <a href="{{ route('appointments.show', $appointment->id) }}" class="text-grey-lighter font-bold py-1 px-3 rounded text-xs bg-blue hover:bg-blue-dark btn btn-primary">View</a>
-            <a href="{{ route('appointments.delete', $appointment->id) }}" class="text-grey-lighter font-bold py-1 px-3 rounded text-xs bg-green hover:bg-green-dark btn btn-danger">Delete</a>
+            <a href="#" class="text-grey-lighter font-bold py-1 px-3 rounded text-xs bg-green hover:bg-green-dark btn btn-info">Edit</a>
+            <a href="#" class="text-grey-lighter font-bold py-1 px-3 rounded text-xs bg-green hover:bg-green-dark btn btn-danger">Delete</a>
        
           </td>
         </tr>
-       
+        @endforeach
+
+        @else
+        <tr class="hover:bg-grey-lighter">
+          <td class="py-4 px-6 border-b border-grey-light">You have no appointments set up</td>
+         
+        </tr>
+       @endif
       </tbody>
     </table>
   </div>

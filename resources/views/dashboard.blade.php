@@ -20,12 +20,12 @@
        
            .main{
             font-family: 'Montserrat', sans-serif;
-            width:auto;
-	        height: 580px;
+            width: auto;
+	          height: 80%;
             line-height: 1rem;
             background: url('image/dog2 (1).png');
             
-           background-color: white;
+            background-color: white;
             border-width: 2px;
             margin-top: 0.75rem;
             border-style: double;
@@ -84,7 +84,9 @@
 </table> 
 
 <x-jet-button class="mt-6" >Medical Records</x-jet-button>
-<x-jet-button class="mt-6" href="#" >Book Appointment</x-jet-nav-link>
+<a type="button" href="{{ route('appointments.index') }}"
+                            class="px-5 py-2 border-gray-500 border text-green-500 rounded transition duration-300 hover:bg-green-700 hover:text-white focus:outline-none place-self-center">
+                            Book  Appointment</a>
 <x-jet-button class="mt-6" >Upcoming Vaccinations</x-jet-button>
 
 

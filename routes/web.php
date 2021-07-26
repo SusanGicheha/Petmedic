@@ -19,12 +19,11 @@ Route::get('/', function () {
 });
 
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');
 
-Route::get('/dashboard',[UserController::class,'show']);
+
+
+Route::get('/dashboard',[UserController::class,'show'])->name('dashboard');
 
 Route::resource('appointments',\App\Http\Controllers\AppointmentController::class);
 
-Route::post('appointment',[AppointmentController::class, 'addData']);
+Route::post('/appointments/create',[AppointmentController::class, 'addData']);
