@@ -14,18 +14,19 @@
 <div class="py-12">
     <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
    
-    <a href="{{ route('appointments.create') }}" class="btn btn-info">Add new appointment</a>
+    <a href="{{ route('appointments.create') }}" class="btn btn-outline-primary">Add new appointment</a>
 
    <!-- component -->
-<div class="w-2/3 mx-auto">
+<div class="w-2/3 mx-auto mt-1">
   <div class="bg-white shadow-md rounded my-6">
     <table class="text-left w-full border-collapse"> <!--Border collapse doesn't work on this site yet but it's available in newer tailwind versions -->
       <thead>
         <tr>
           <th class="py-4 px-6 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-grey-light">Name</th>
-          <th class="py-4 px-6 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-grey-light">Pet</th>
+          
           <th class="py-4 px-6 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-grey-light">Phone Number</th>
           <th class="py-4 px-6 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-grey-light">Date & Time</th>
+          <th class="py-4 px-6 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-grey-light">Status</th>
           <th class="py-4 px-6 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-grey-light">Actions</th>
         </tr>
       </thead>
@@ -35,13 +36,15 @@
         @foreach($appointments as $appointment)
         <tr class="hover:bg-grey-lighter">
           <td class="py-4 px-6 border-b border-grey-light">{{$appointment->name}}</td>
-          <td class="py-4 px-6 border-b border-grey-light">{{$appointment->pet_name}}</td>
+         
           <td class="py-4 px-6 border-b border-grey-light">{{$appointment->phone_number}}</td>
+          
         <td class="py-4 px-6 border-b border-grey-light">{{$appointment->date_time}}</td>
+        <td class="py-4 px-6 border-b border-grey-light text-green-80"></td>
           
            <td>
-            <a href="#" class="text-grey-lighter font-bold py-1 px-3 rounded text-xs bg-green hover:bg-green-dark btn btn-info">Edit</a>
-            <a href="#" class="text-grey-lighter font-bold py-1 px-3 rounded text-xs bg-green hover:bg-green-dark btn btn-danger">Delete</a>
+            <a href="{{ route ('appointments.edit', $appointment->id) }}" class="text-grey-lighter font-bold py-1 px-3 rounded text-xs bg-green hover:bg-green-dark btn btn-outline-primary">Edit</a>
+            <a href="#" class="text-grey-lighter font-bold py-1 px-3 rounded text-xs bg-green hover:bg-green-dark btn btn-outline-danger">Delete</a>
        
           </td>
         </tr>

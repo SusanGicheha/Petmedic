@@ -27,8 +27,8 @@ class StoreAppointmentRequest extends FormRequest
             'name' => 'required',
             'email_address' => 'required',
             'user_id' => 'required',
-            'phone_number' => 'required',
-            'date_time' => 'required',
+            'phone_number' => 'required|numeric',
+            'date_time' => 'required|after:today',
             'pet_name' => 'required',
 
         ];

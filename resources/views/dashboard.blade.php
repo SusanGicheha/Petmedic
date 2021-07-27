@@ -84,9 +84,9 @@
 </table> 
 
 <x-jet-button class="mt-6" >Medical Records</x-jet-button>
-<a type="button" href="{{ route('appointments.index') }}"
-                            class="px-5 py-2 border-gray-500 border text-green-500 rounded transition duration-300 hover:bg-green-700 hover:text-white focus:outline-none place-self-center">
-                            Book  Appointment</a>
+<x-jet-button><a type="button" href="{{ route('appointments.index') }}"
+                            class="px-0 py-0 ">
+                            Book  Appointment</a></x-jet-button>
 <x-jet-button class="mt-6" >Upcoming Vaccinations</x-jet-button>
 
 

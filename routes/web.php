@@ -26,4 +26,6 @@ Route::get('/dashboard',[UserController::class,'show'])->name('dashboard');
 
 Route::resource('appointments',\App\Http\Controllers\AppointmentController::class);
 
+
+
 Route::post('/appointments/create',[AppointmentController::class, 'addData']);

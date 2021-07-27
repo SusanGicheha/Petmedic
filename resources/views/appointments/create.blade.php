@@ -17,8 +17,12 @@
                 <div class="px-4 py-5 bg-white sm:p-6">
                             <label for="name" class="block font-medium text-sm text-gray-700">Name</label>
                             <input type="text" name="name" id="name" type="text" class="form-input rounded-md shadow-sm mt-1 block w-full" placeholder="Please enter name of person attending the appointment" value="{{ old('name') }}" />
-                </div> 
-
+                            @if($errors->first('name'))
+                <div class="alert-danger" style="color: red;">{{$errors->first('name')}}</div>
+                @endif
+                        </div> 
+   
+</div>
                         
             <label for="pet_name" class="hidden block font-medium text-sm text-gray-700">Pet Name</label>
             <input type="text" name="pet_name" id="pet_name" type="text" class="hidden form-input rounded-md shadow-sm mt-1 block w-full"value="{{ isset($user) ? $user->pet_name :old('pet_name') }}" readonly/>
@@ -31,7 +35,12 @@
                             <label for="phone_number" class="block font-medium text-sm text-gray-700">Phone number</label>
                             <input type="tel" name="phone_number" id="phone_number" type="tel" class="form-input rounded-md shadow-sm mt-1 block w-full"
                             value="{{ old('phone_number') }}" />
+                            @if($errors->first('phone_number'))
+                <div class="alert-danger" style="color: red;">{{$errors->first('phone_number')}}</div>
+                @endif
                             </div>
+                          
+</div>
 
 <div class="shadow overflow-hidden sm:rounded-md">
                         <div class="hidden px-4 py-5 bg-white sm:p-6">
@@ -39,7 +48,7 @@
                         <input type="email" name="email_address" id="email_address" type="email" class="hidden form-input rounded-md shadow-sm mt-1 block w-full"
                         value="{{ isset($user) ? $user->email :old('email_address') }}" />
                         </div>
-                                                        
+</div>                                                      
 
 
 <div class="shadow overflow-hidden sm:rounded-md">
@@ -47,9 +56,12 @@
                                 <label for="date_time" class="block font-medium text-sm text-gray-700">Date & Time Of Appointment</label>
                             <input type="datetime-local" name="date_time" id="date_time" type="datetime-local" class="form-input rounded-md shadow-sm mt-1 block w-full"
                                    value="{{ old('date_time') }}" />
+                                   @if($errors->first('date_time'))
+                <div class="alert-danger" style="color: red;">{{$errors->first('date_time')}}</div>
+                @endif
                             </div>
 
-
+</div>
 
 
 
@@ -57,16 +69,8 @@
         <div class="flex items-center justify-end px-4 py-3 bg-gray-50 text-right sm:px-6">
            <x-jet-button type="submit">Create Appointment</x-jet-button> 
          </div>
-</div>
-</div>
-</div>
-</div>
-</div>
+
 </form>
 </div>
-
-
-
-
-
+</div>
 </x-app-layout>

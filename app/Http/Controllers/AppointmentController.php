@@ -28,28 +28,31 @@ class AppointmentController extends Controller
      */
     public function create()
     {
-      
-        return view('appointments.create');
+        $user=Auth::user();
+        return view('appointments.create',compact('user'));
     }
 
     public function store(StoreAppointmentRequest $request)
     {
-        
+
+        $user=Auth::user();
         Appointment::create($request->validated());
-        return redirect()->route('appointments.index');
+        return redirect()->route('appointments.index',compact('user'));
     }
 
     
     public function show(Appointment $appointment)
     {
        
-        return view('appointments.show',compact('appointment'));
+        $appointments=Appointment::all();
+        return view('appointments.index',compact('appointment','appointments'));
     }
 
     
     public function edit(Appointment $appointment)
     {
-        return view('appointment.edit' ,compact('appointment'));
+        $appointments=Appointment::all();
+        return view('appointments.update' ,compact('appointment','appointments'));
     }
 
     
@@ -57,7 +60,7 @@ class AppointmentController extends Controller
     {
         $appointment->update($request->validated());
 
-        return redirect()->route('appointments.index');
+        return redirect()->route('appointments.index',$appointment->id)->with('success','Appointment updated successfully');
     }
 
     
@@ -69,6 +72,15 @@ class AppointmentController extends Controller
     }
  function addData(Request $req)
     {
+        $req->validate([
+            'name' => 'required|filled',
+            'email_address' => 'required',
+            'user_id' => 'required',
+            'phone_number' => 'required|numeric|digits:10',
+            'date_time' => 'required|after:today',
+            'pet_name' => 'required',
+        ]);
+      
         $appointments = new Appointment;
         $appointments->name=$req->name;
         $appointments->pet_name=$req->pet_name;
