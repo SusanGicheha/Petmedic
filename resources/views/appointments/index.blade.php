@@ -43,8 +43,14 @@
         <td class="py-4 px-6 border-b border-grey-light text-green-80"></td>
           
            <td>
-            <a href="{{ route ('appointments.edit', $appointment->id) }}" class="text-grey-lighter font-bold py-1 px-3 rounded text-xs bg-green hover:bg-green-dark btn btn-outline-primary">Edit</a>
-            <a href="#" class="text-grey-lighter font-bold py-1 px-3 rounded text-xs bg-green hover:bg-green-dark btn btn-outline-danger">Delete</a>
+            <a href="{{ route ('appointments.edit', $appointment->id) }}" class="text-blue-600 hover:text-blue-900 mb-2 mr-2  btn btn-outline-primary">Edit</a>
+             <form class="inline-block" action="{{ route('appointments.destroy', $appointment->id) }}" method="POST" onsubmit="return confirm('Are you sure?');">
+              <input type="hidden" name="_method" value="DELETE">
+              <input type="hidden" name="_token" value="{{ csrf_token() }}">
+              <input type="submit" class="text-red-600 hover:text-red-900 mb-2 mr-2 btn btn-outline-danger" value="Delete">
+              </form>
+
+            
        
           </td>
         </tr>

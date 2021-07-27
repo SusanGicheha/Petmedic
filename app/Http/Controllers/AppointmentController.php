@@ -68,7 +68,7 @@ class AppointmentController extends Controller
     {
         $appointment->delete();
 
-        return redirect()->route('appointments.index');
+        return redirect()->route('appointments.index',$appointment->id)->with('success','Appointment updated successfully');
     }
  function addData(Request $req)
     {

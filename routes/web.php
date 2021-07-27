@@ -29,3 +29,5 @@ Route::resource('appointments',\App\Http\Controllers\AppointmentController::clas
 
 
 Route::post('/appointments/create',[AppointmentController::class, 'addData']);
+
+

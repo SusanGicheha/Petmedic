@@ -93,7 +93,7 @@
                 </a>
 
                 
-                <x-jet-button class="ml-4" onclick="myFunction()">
+                <x-jet-button class="ml-4" onsubmit="return confirm('Successfully Registered');">
                     
                         
                     {{ __('Register') }}
