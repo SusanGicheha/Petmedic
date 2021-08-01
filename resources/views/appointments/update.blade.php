@@ -11,6 +11,7 @@
                 <form method="post" action="{{ route('appointments.update', $appointment->id) }}">
                     @csrf
                     @method('PUT')
+                    @role('user')
                     <div class="shadow overflow-hidden sm:rounded-md">
                 <div class="px-4 py-5 bg-white sm:p-6">
                             <label for="name" class="block font-medium text-sm text-gray-700">Name</label>
@@ -49,7 +50,7 @@
                 <div class="alert-danger" style="color: red;">{{$errors->first('date_time')}}</div>
                 @endif
                             </div>
-
+@endrole
                         <div class="flex items-center justify-end px-4 py-3 bg-gray-50 text-right sm:px-6">
                             <button class="inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:shadow-outline-gray disabled:opacity-25 transition ease-in-out duration-150">
                             Save

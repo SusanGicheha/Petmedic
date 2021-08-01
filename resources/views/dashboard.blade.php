@@ -63,7 +63,8 @@
                
             <div id="image" align="center" style="padding:50px;">
             <img src="{{asset('/image/profile.svg') }}" class="block h-20 w-auto"  /> </div>
-            
+
+            @role('user')
             <table align="center" >
         <br>
         <h1 class="text-center"><b>{{ $users->pet_name }}'s details </b></h1>
@@ -87,9 +88,20 @@
 <x-jet-button><a type="button" href="{{ route('appointments.index') }}"
                             class="px-0 py-0 ">
                             Book  Appointment</a></x-jet-button>
-<x-jet-button class="mt-6" >Upcoming Vaccinations</x-jet-button>
+<x-jet-button class="mt-6" ><a type="button" href="{{ route('vaccinations.show') }}"
+                            class="px-0 py-0 ">Upcoming Vaccinations</a></x-jet-button>
 
-
+@endrole
+@role('administrator')
+<h1 class="text-center"><b>Admin Panel</b></h1>
+<x-jet-button class="mt-6" ><a type="button" href="{{ route('users.index') }}"
+                            class="px-0 py-0 ">All Users</a></x-jet-button><br>
+<x-jet-button class="mt-6"><a type="button" href="{{ route('appointments.index') }}"
+                            class="px-0 py-0 ">
+                           View Appointments</a></x-jet-button><br>
+<x-jet-button class="mt-6" ><a type="button" href="{{ route('vaccinations.index') }}"
+                            class="px-0 py-0 ">Update Vaccinations</a></x-jet-button>
+@endrole
 
 
 </body>
