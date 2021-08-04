@@ -101,6 +101,8 @@
                            View Appointments</a></x-jet-button><br>
 <x-jet-button class="mt-6" ><a type="button" href="{{ route('vaccinations.index') }}"
                             class="px-0 py-0 ">Update Vaccinations</a></x-jet-button>
+
+<x-jet-button class="mt-6" ><a type="button" href="{{ route('medicalrecords.index') }}" class="px-0 py-0">Medical Records</a></x-jet-button>
 @endrole
 
 

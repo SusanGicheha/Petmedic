@@ -34,9 +34,7 @@
         @foreach($users as $user)
         <tr class="hover:bg-grey-lighter">
           <td class="py-4 px-6 border-b border-grey-light">{{$user->id}}</td>
-         
           <td class="py-4 px-6 border-b border-grey-light">{{$user->name}}</td>
-          
         <td class="py-4 px-6 border-b border-grey-light">{{$user->email}}</td>
         <td class="py-4 px-6 border-b border-grey-light">{{$user->phone_no}}</td>
        
@@ -47,7 +45,7 @@
    <form class="inline-block" action="{{ route('users.destroy', $user->id) }}" method="POST" onsubmit="return confirm('Are you sure?');">
               <input type="hidden" class="hidden" name="_method" value="DELETE">
               <input type="hidden" class="hidden" name="_token" value="{{ csrf_token() }}">
-              <input type="submit" class="text-red-600 hover:text-red-900 mb-2 mr-2 btn btn-outline-danger btn-sm" value="Delete">
+              <input type="submit" class="text-red-600 hover:text-red-900 mb-2 mr-2 btn btn-outline-danger btn-sm" value="Suspend">
               </form>
        
           </td>

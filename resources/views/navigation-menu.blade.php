@@ -34,8 +34,14 @@
                     @role('user')
                     <x-jet-nav-link class="link font-bold text-base" href="{{ route('vaccinations.show') }}" >
                         {{ __('Vaccinations') }}
+                    </x-jet-nav-link> 
+                    @endrole
+                    @role('user')
+                    <x-jet-nav-link class="link font-bold text-base"  href="{{ route('medicalrecords.index') }}">
+                        {{__('Medical Records') }}
                     </x-jet-nav-link>
                     @endrole
+
                     
                 </div>
             </div>

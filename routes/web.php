@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AppointmentController;
 use App\Http\Controllers\VaccinationController;
+use App\Http\Controllers\MedicalRecordController;
 use App\Http\Controllers\UserListController;
 /*
 |--------------------------------------------------------------------------
@@ -28,10 +29,12 @@ Route::get('/dashboard',[UserController::class,'show'])->name('dashboard');
 
 Route::resource('appointments',\App\Http\Controllers\AppointmentController::class);
 Route::resource('vaccinations',\App\Http\Controllers\VaccinationController::class);
+Route::resource('medicalrecords' ,\App\Http\Controllers\MedicalRecordController::class);
 Route::resource('users',\App\Http\Controllers\UserListController::class);
+Route::get('/medicalrecords/show',[MedicalRecordController::class, 'show'])->name('medicalrecords.show');
 Route::get('/vaccinations/show',[VaccinationController::class, 'show'])->name('vaccinations.show');
 Route::get('/appointments/show',[AppointmentController::class, 'show']);
+Route::post('/medicalrecords/store',[MedicalRecordController::class, 'store'])->name('medicalrecords.store');
 Route::post('/appointments/create',[AppointmentController::class, 'addData']);
 Route::post('/vaccinations/create',[VaccinationController::class, 'addData']);
-
 Route::post('/users/create',[UserListController::class, 'addData']);
