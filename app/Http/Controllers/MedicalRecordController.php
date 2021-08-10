@@ -16,7 +16,7 @@ class MedicalRecordController extends Controller
     public function index()
     {
         //
-        $medicalrecords=MedicalRecord::where('user_id', Auth::user()->id)->get();
+        $medicalrecords=MedicalRecord::all();
         return view('medicalrecords.index',compact('medicalrecords'));
     }
 
@@ -58,7 +58,7 @@ class MedicalRecordController extends Controller
     public function show()
     {
         $medicalrecords=MedicalRecord::where('user_id', Auth::user()->id)->get();
-        return view('medicalrecords.index',compact('medicalrecords'));
+        return view('medicalrecords.show',compact('medicalrecords'));
     }
 
     
@@ -67,7 +67,11 @@ class MedicalRecordController extends Controller
         $medicalrecords=MedicalRecord::all();
         return view('medicalrecords.update' ,compact('medicalrecord','medicalrecords'));
     }
-
+    public function view()
+    {
+        $medicalrecords=MedicalRecord::where('user_id', Auth::user()->id)->get();
+        return view('medicalrecords.view',compact('medicalrecords'));
+    }
   
     public function update(UpdateMedicalRecordRequest $request,MedicalRecord $medicalrecords)
     {

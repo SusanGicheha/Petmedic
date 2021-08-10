@@ -37,7 +37,7 @@
         <td class="py-4 px-6 border-b border-grey-light">{{$record->name}}</td>
         <td class="py-4 px-6 border-b border-grey-light text-green-80">{{$record->user_id}}</td>
         <td class="py-4 px-6 border-b border-grey-light text-green-80">{{$record->id}}</td>
-        <td class="py-4 px-6 border-b border-grey-light text-green-80">{{record->year}}</td>
+        <td class="py-4 px-6 border-b border-grey-light text-green-80">{{$record->year}}</td>
        
            
         </tr>

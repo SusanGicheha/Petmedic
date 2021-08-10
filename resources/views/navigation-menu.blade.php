@@ -26,6 +26,7 @@
                     <x-jet-nav-link class="link font-bold text-base" href="{{ route ('appointments.index') }}" :active="request()->routeIs('appointments.index')" >
                         {{ __('Appointments') }}
                     </x-jet-nav-link>
+                    
                     @role('administrator')
                     <x-jet-nav-link class="link font-bold text-base" href="{{ route ('vaccinations.index') }}" :active="request()->routeIs('vaccinations.index')" >
                         {{ __('Vaccinations') }}
@@ -37,6 +38,11 @@
                     </x-jet-nav-link> 
                     @endrole
                     @role('user')
+                    <x-jet-nav-link class="link font-bold text-base"  href="{{ route('medicalrecords.show') }}">
+                        {{__('Medical Records') }}
+                    </x-jet-nav-link>
+                    @endrole
+                    @role('administrator')
                     <x-jet-nav-link class="link font-bold text-base"  href="{{ route('medicalrecords.index') }}">
                         {{__('Medical Records') }}
                     </x-jet-nav-link>

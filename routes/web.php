@@ -32,8 +32,9 @@ Route::resource('vaccinations',\App\Http\Controllers\VaccinationController::clas
 Route::resource('medicalrecords' ,\App\Http\Controllers\MedicalRecordController::class);
 Route::resource('users',\App\Http\Controllers\UserListController::class);
 Route::get('/medicalrecords/show',[MedicalRecordController::class, 'show'])->name('medicalrecords.show');
+Route::get('/medicalrecords/view',[MedicalRecordController::class, 'show'])->name('medicalrecords.view');
 Route::get('/vaccinations/show',[VaccinationController::class, 'show'])->name('vaccinations.show');
-Route::get('/appointments/show',[AppointmentController::class, 'show']);
+Route::get('/appointments/show',[AppointmentController::class, 'show'])->name('appointments.show');
 Route::post('/medicalrecords/store',[MedicalRecordController::class, 'store'])->name('medicalrecords.store');
 Route::post('/appointments/create',[AppointmentController::class, 'addData']);
 Route::post('/vaccinations/create',[VaccinationController::class, 'addData']);

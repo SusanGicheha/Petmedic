@@ -28,9 +28,9 @@
         <th class="py-4 px-6 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-grey-light">Name</th>
         
           
-  
+        <th class="py-4 px-6 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-grey-light"></th>
         
-          <th class="py-4 px-6 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-grey-light">MEDICAL RECORDS </th>
+          <th class="py-4 px-6 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-grey-light"></th>
     
       </thead>
       <tbody>
@@ -42,15 +42,14 @@
           <td class="py-4 px-6 border-b border-grey-light">{{$record->user_id}}</td>
         <td class="py-4 px-6 border-b border-grey-light">{{$record->name}}</td>
 
-        <a class="p-2 px-4" href=" {{ route('medicalrecords.view') }}">View</a>
-                    <a class="p-2 px-4"href=" {{ route('medicalrecords.download',['file_path'=>$medicalrecords->file_path]) }}">Download</a>
-    
+       <td> <a href=" {{ route('medicalrecords.view', $record->id) }}" class="text-blue-600 hover:text-blue-900 mb-2 mr-2  btn btn-outline-primary btn-sm">View</a>
+                  
 
        
         @role('administrator')
            <td class="py-4 px-6 border-b border-grey-light">
 
-            <a href="{{ route ('vaccinations.edit', $vaccine->id) }}" class="text-blue-600 hover:text-blue-900 mb-2 mr-2  btn btn-outline-primary btn-sm">Edit</a>
+            <a href="{{ route ('medicalrecords.edit', $record->id) }}" class="text-blue-600 hover:text-blue-900 mb-2 mr-2  btn btn-outline-primary btn-sm">Edit</a>
             <form class="inline-block" action="{{ route('medicalrecords.destroy', $record->id) }}" method="POST" onsubmit="return confirm('Are you sure?');">
               <input type="hidden" class="hidden" name="_method" value="DELETE">
               <input type="hidden" class="hidden" name="_token" value="{{ csrf_token() }}">

@@ -17,7 +17,7 @@ class AppointmentController extends Controller
      */
     public function index()
     {
-        $appointments=Appointment::where('user_id', Auth::user()->id)->get();
+        $appointments=Appointment::all();
         return view('appointments.index',compact('appointments'));
     }
 
@@ -44,7 +44,7 @@ class AppointmentController extends Controller
     public function show(Appointment $appointment)
     {
        
-        $appointments=Appointment::all();
+        $appointments=Appointment::where('user_id', Auth::user()->id)->get();
         return view('appointments.index',compact('appointment','appointments'));
     }
 

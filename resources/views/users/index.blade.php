@@ -12,10 +12,11 @@
 </x-slot>
 
 <div class="py-12">
+@role('superadministrator')
     <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
    
     <a href="{{ route('users.create') }}" class="btn btn-outline-primary">Add Admin-User</a>
-
+@endrole
    <!-- component -->
 <div class="w-2/3 mx-auto mt-1">
   <div class="bg-white shadow-md rounded my-2">
