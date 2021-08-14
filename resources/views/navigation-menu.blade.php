@@ -12,38 +12,36 @@
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8   sm:ml-10 sm:flex flex justify-center">
-                    <x-jet-nav-link class="link font-bold text-base" href="{{ route ('dashboard') }}" > 
+                    <x-jet-nav-link class="link font-black text-gray-900 text-lg" href="{{ route ('dashboard') }}" > 
                         {{ __('Home') }}
                     </x-jet-nav-link>
-                    <x-jet-nav-link class="link font-bold text-base" href="#" >
-                        {{ __('About') }}
-                    </x-jet-nav-link>
+                   
                     @role('administrator')
-                    <x-jet-nav-link class="link font-bold text-base" href="{{ route ('users.index') }}" :active="request()->routeIs('users.index')" >
+                    <x-jet-nav-link class="link font-black  text-gray-900 text-lg" href="{{ route ('users.index') }}" :active="request()->routeIs('users.index')" >
                         {{ __('List of Users') }}
                     </x-jet-nav-link>
                     @endrole
-                    <x-jet-nav-link class="link font-bold text-base" href="{{ route ('appointments.index') }}" :active="request()->routeIs('appointments.index')" >
+                    <x-jet-nav-link class="link font-black text-gray-900 text-lg" href="{{ route ('appointments.index') }}" :active="request()->routeIs('appointments.index')" >
                         {{ __('Appointments') }}
                     </x-jet-nav-link>
                     
                     @role('administrator')
-                    <x-jet-nav-link class="link font-bold text-base" href="{{ route ('vaccinations.index') }}" :active="request()->routeIs('vaccinations.index')" >
+                    <x-jet-nav-link class="link font-black text-gray-900 text-lg" href="{{ route ('vaccinations.index') }}" :active="request()->routeIs('vaccinations.index')" >
                         {{ __('Vaccinations') }}
                     </x-jet-nav-link>
                     @endrole
                     @role('user')
-                    <x-jet-nav-link class="link font-bold text-base" href="{{ route('vaccinations.show') }}" >
+                    <x-jet-nav-link class="link font-black text-gray-900 text-lg" href="{{ route('vaccinations.show') }}" >
                         {{ __('Vaccinations') }}
                     </x-jet-nav-link> 
                     @endrole
                     @role('user')
-                    <x-jet-nav-link class="link font-bold text-base"  href="{{ route('medicalrecords.show') }}">
+                    <x-jet-nav-link class="link font-black text-gray-900 text-lg"  href="{{ route('medicalrecords.show') }}">
                         {{__('Medical Records') }}
                     </x-jet-nav-link>
                     @endrole
                     @role('administrator')
-                    <x-jet-nav-link class="link font-bold text-base"  href="{{ route('medicalrecords.index') }}">
+                    <x-jet-nav-link class="link font-black text-gray-900 text-lg"  href="{{ route('medicalrecords.index') }}">
                         {{__('Medical Records') }}
                     </x-jet-nav-link>
                     @endrole
@@ -59,7 +57,7 @@
                         <x-jet-dropdown align="right" width="60">
                             <x-slot name="trigger">
                                 <span class="inline-flex rounded-md">
-                                    <button type="button" class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:bg-gray-50 hover:text-gray-700 focus:outline-none focus:bg-gray-50 active:bg-gray-50 transition">
+                                    <button type="button" class="inline-flex items-center px-3 py-2 border border-transparent text-lg leading-4 font-medium rounded-md text-white bg-white hover:bg-gray-50 hover:text-white text-lg focus:outline-none focus:bg-gray-50 active:bg-gray-50 transition">
                                         {{ Auth::user()->currentTeam->name }}
 
                                         <svg class="ml-2 -mr-0.5 h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
@@ -70,7 +68,7 @@
                             </x-slot>
 
                             <x-slot name="content">
-                                <div class="w-60">
+                                <div class="w-60 bg-white">
                                     <!-- Team Management -->
                                     <div class="block px-4 py-2 text-lg text-gray-900">
                                         {{ __('Manage Team') }}

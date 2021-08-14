@@ -55,17 +55,17 @@ class MedicalRecordController extends Controller
     }
 
    
-    public function show()
+    public function show($id)
     {
-        $medicalrecords=MedicalRecord::where('user_id', Auth::user()->id)->get();
-        return view('medicalrecords.show',compact('medicalrecords'));
+        $medicalrecords=MedicalRecord::find($id);
+        return view('medicalrecords.view',compact('medicalrecords'));
     }
 
     
-    public function edit(MedicalRecord $medicalrecords)
+    public function edit($id)
     {
-        $medicalrecords=MedicalRecord::all();
-        return view('medicalrecords.update' ,compact('medicalrecord','medicalrecords'));
+        $medicalrecords=MedicalRecord::find($id);
+        return view('medicalrecords.edit',compact('medicalrecords'));
     }
     public function view()
     {
@@ -82,11 +82,22 @@ class MedicalRecordController extends Controller
     }
 
    
-    public function destroy(MedicalRecord $medicalrecords)
+    public function destroy($id)
     {
-        $medicalrecords->delete();
+       // $medicalrecords->delete();
 
-        return redirect()->route('medicalrecords.index',$medicalrecords->id)->with('success','Record deleted successfully');
+        //return redirect()->route('medicalrecords.index',$medicalrecords->id)->with('success','Record deleted successfully');
+
+        $medicalrecords = MedicalRecord::find($id);
+        $prev_filename=$medicalrecords->file_name;
+        
+
+        MedicalRecord::where('id',$id)->delete();
+
+        
+        
+  
+          return redirect()->route('medicalrecords.index')->with('message','You have successfully deleted the fee structure!');
     }
    
     public function download($file_path)

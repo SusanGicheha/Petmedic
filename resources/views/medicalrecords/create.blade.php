@@ -28,10 +28,10 @@
             <label for= "year" >Year</label>
             <select name="year" id="year" placeholder="select a year" class="form-select block appearance-none w-full bg-grey-lighter border border-grey-lighter text-grey-darker py-2 px-2 rounded form-control" required>
             <option value="">Select a year</option>
-                            <option value="1" >2019</option>
-                            <option value="2" >2020</option>
-                            <option value="3" >2021</option>
-                            <option value="4" >2022</option>
+                            <option value="2019" >2019</option>
+                            <option value="2020" >2020</option>
+                            <option value="2021" >2021</option>
+                            <option value="2022" >2022</option>
                         </select>
 
             

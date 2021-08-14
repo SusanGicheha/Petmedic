@@ -42,7 +42,7 @@
           <td class="py-4 px-6 border-b border-grey-light">{{$record->user_id}}</td>
         <td class="py-4 px-6 border-b border-grey-light">{{$record->name}}</td>
 
-       <td> <a href=" {{ route('medicalrecords.view', $record->id) }}" class="text-blue-600 hover:text-blue-900 mb-2 mr-2  btn btn-outline-primary btn-sm">View</a>
+       <td> <a href=" {{ route('medicalrecords.show', $record->id) }}" class="text-blue-600 hover:text-blue-900 mb-2 mr-2  btn btn-outline-primary btn-sm">View</a>
                   
 
        
@@ -50,6 +50,7 @@
            <td class="py-4 px-6 border-b border-grey-light">
 
             <a href="{{ route ('medicalrecords.edit', $record->id) }}" class="text-blue-600 hover:text-blue-900 mb-2 mr-2  btn btn-outline-primary btn-sm">Edit</a>
+
             <form class="inline-block" action="{{ route('medicalrecords.destroy', $record->id) }}" method="POST" onsubmit="return confirm('Are you sure?');">
               <input type="hidden" class="hidden" name="_method" value="DELETE">
               <input type="hidden" class="hidden" name="_token" value="{{ csrf_token() }}">
