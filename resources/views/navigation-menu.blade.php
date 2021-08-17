@@ -36,7 +36,7 @@
                     </x-jet-nav-link> 
                     @endrole
                     @role('user')
-                    <x-jet-nav-link class="link font-black text-gray-900 text-lg"  href="{{ route('medicalrecords.show') }}">
+                    <x-jet-nav-link class="link font-black text-gray-900 text-lg"  href="{{ route('medicalrecords.index') }}">
                         {{__('Medical Records') }}
                     </x-jet-nav-link>
                     @endrole

@@ -22,25 +22,29 @@
     <table class="text-center ml-0 w-full border-collapse"> <!--Border collapse doesn't work on this site yet but it's available in newer tailwind versions -->
       <thead>
         <tr>
-          
+          @role('administrator')
         <th class="py-4 px-6 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-grey-light">ID </th>
         <th class="py-4 px-6 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-grey-light">UserId</th>
         <th class="py-4 px-6 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-grey-light">Name</th>
-        
-          
-        <th class="py-4 px-6 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-grey-light"></th>
-        
+        @endrole
+          @role('user')
+        <th class="py-4 px-6 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-grey-light">Year</th>
+        @endrole
           <th class="py-4 px-6 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-grey-light"></th>
     
       </thead>
       <tbody>
+        
   
       @if($medicalrecords->count() > 0)
         @foreach($medicalrecords as $record)
         <tr class="hover:bg-grey-lighter">
+          @role('administrator')
           <td class="py-4 px-6 border-b border-grey-light">{{$record->id}}</td>
           <td class="py-4 px-6 border-b border-grey-light">{{$record->user_id}}</td>
         <td class="py-4 px-6 border-b border-grey-light">{{$record->name}}</td>
+        @endrole
+        <td class="py-4 px-6 border-b border-grey-light">{{$record->year}}</td>
 
        <td> <a href=" {{ route('medicalrecords.show', $record->id) }}" class="text-blue-600 hover:text-blue-900 mb-2 mr-2  btn btn-outline-primary btn-sm">View</a>
                   

@@ -13,7 +13,8 @@ class MedicalRecord extends Model
     'user_id',
     'year',
     'name',
-    'file_path'
+    'file_path',
+    
     
    
 

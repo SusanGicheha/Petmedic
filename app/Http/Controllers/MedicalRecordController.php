@@ -40,10 +40,10 @@ class MedicalRecordController extends Controller
             $file_path=time().'.'.$file->getClientOriginalExtension();
             $request->file->move('storage/medicalrecords/', $file_path);
 
-            $medicalrecords->file_path= $file_path;
+           $medicalrecords->file_path= $file_path;
           }
 
-   
+       
         $medicalrecords->user_id=$request->input('user_id');
         $medicalrecords->name=$request->input('name');
         $medicalrecords->year=$request->input('year');
