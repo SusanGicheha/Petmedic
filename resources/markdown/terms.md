@@ -1,3 +1,3 @@
 # Terms of Service
 
-Edit this file to define the terms of service for your application.
+By agreeing to sign up for this application you are agreeing to share your data with us.
