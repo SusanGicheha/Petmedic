@@ -27,7 +27,7 @@ class AdminRequest extends FormRequest
             'name' => 'required',
             'email' => 'required|email',
             'password' => 'required',
-            'password_confirmation' => 'required|same:password',
+            
             'phone_no' => 'required|numeric',
             'profile_photo_path' => 'required',
           

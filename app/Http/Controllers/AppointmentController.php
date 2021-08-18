@@ -1,11 +1,14 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\Appointment;
+use Illuminate\Http\Request;
+
+use App\Mail\AppointmentBooked;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 use App\Http\Requests\StoreAppointmentRequest;
 use App\Http\Requests\UpdateAppointmentRequest;
-use App\Models\Appointment;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Http\Request;
 
 
 class AppointmentController extends Controller
@@ -36,16 +39,27 @@ class AppointmentController extends Controller
     {
 
         $user=Auth::user();
-        Appointment::create($request->validated());
-        return redirect()->route('appointments.index',compact('user'));
+       $NewAppointment = Appointment::create($request->validated());
+       
+       Mail::to($user->email)->send(new AppointmentBooked($user, $NewAppointment));
+       
+        return redirect()->route('appointments.show',compact('user'));
+
     }
 
     
-    public function show(Appointment $appointment)
+    public function show()
     {
        
         $appointments=Appointment::where('user_id', Auth::user()->id)->get();
-        return view('appointments.index',compact('appointment','appointments'));
+        return view('appointments.show',compact('appointments'));
+    }
+
+    public function booked()
+    {        
+        $user=Auth::user();
+        $appointment=Appointment::all();
+        return view('appointments.booked' ,compact('appointment','user'));
     }
 
     
@@ -55,12 +69,14 @@ class AppointmentController extends Controller
         return view('appointments.update' ,compact('appointment','appointments'));
     }
 
+   
+
     
     public function update(UpdateAppointmentRequest $request,Appointment $appointment)
     {
         $appointment->update($request->validated());
 
-        return redirect()->route('appointments.index',$appointment->id)->with('success','Appointment updated successfully');
+        return redirect()->route('appointments.show',$appointment->id)->with('success','Appointment updated successfully');
     }
 
     
@@ -68,7 +84,7 @@ class AppointmentController extends Controller
     {
         $appointment->delete();
 
-        return redirect()->route('appointments.index',$appointment->id)->with('success','Appointment updated successfully');
+        return redirect()->route('appointments.show',$appointment->id)->with('success','Appointment updated successfully');
     }
  function addData(Request $req)
     {
@@ -77,7 +93,7 @@ class AppointmentController extends Controller
             'email_address' => 'required',
             'user_id' => 'required',
             'phone_number' => 'required|numeric|digits:10',
-            'date_time' => 'required|after:today',
+            'date_time' => 'required|after:today|unique:appointments',
             'pet_name' => 'required',
         ]);
       
@@ -89,8 +105,9 @@ class AppointmentController extends Controller
        
         $appointments->phone_number=$req->phone_number;
         $appointments->email_address=$req->email_address;
-        $appointments->save();
-        return view('appointments.index');
+      
+       
+        return $appointments;
 
 
 

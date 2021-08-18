@@ -21,6 +21,17 @@
                           
    
 </div>
+<!-- User email -->     
+<div class="shadow overflow-hidden sm:rounded-md">
+                <div class="px-4 py-5 bg-white sm:p-6">
+                            <label for="email" class="block font-medium text-sm text-gray-700">Email</label>
+                            <input type="email" name="email" id="email" type="email" class="form-input rounded-md shadow-sm mt-1 block w-full" placeholder="User Email" value="{{ old('email') }}" />
+                            @if($errors->first('email'))
+                <div class="alert-danger" style="color: red;">{{$errors->first('email')}}</div>
+                @endif
+                        </div> 
+   
+</div>
 <!-- Name of vaccine -->     
 <div class="shadow overflow-hidden sm:rounded-md">
                 <div class="px-4 py-5 bg-white sm:p-6">

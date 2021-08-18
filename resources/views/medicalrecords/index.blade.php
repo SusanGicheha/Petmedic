@@ -45,7 +45,7 @@
        <td> <a href=" {{ route('medicalrecords.view', $record->id) }}" class="text-blue-600 hover:text-blue-900 mb-2 mr-2  btn btn-outline-primary btn-sm">View</a>
                   
 
-       
+        
         @role('administrator')
            <td class="py-4 px-6 border-b border-grey-light">
 

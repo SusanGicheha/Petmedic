@@ -28,9 +28,10 @@ class StoreAppointmentRequest extends FormRequest
             'email_address' => 'required',
             'user_id' => 'required',
             'phone_number' => 'required|numeric',
-            'date_time' => 'required|after:today',
+            'date_time' => 'required|after:today|unique:appointments',
             'pet_name' => 'required',
 
         ];
+
     }
 }

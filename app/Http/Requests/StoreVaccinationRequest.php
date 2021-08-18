@@ -26,6 +26,7 @@ class StoreVaccinationRequest extends FormRequest
         return [
             'user_id' => 'required|max:2',
             'name' => 'required',
+            'email' => 'required|email',
             'description' => 'required',
             'frequency'=> 'required',
             'previous_date' => 'required|before:today',

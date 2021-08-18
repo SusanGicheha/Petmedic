@@ -17,6 +17,7 @@ class VaccinationSeeder extends Seeder
                 [
                     'user_id' => '1',
                     'name' => 'Rabies',
+                    'email' => 'susan@gmail.com',
                     'description' => 'Rabies is an incurable virus that attacks the brain and spinal cord.',
                     'frequency' => 'Annual',
                     'previous_date' => '2020-08-07',
@@ -26,6 +27,7 @@ class VaccinationSeeder extends Seeder
                 [
                     'user_id' => '2',
                     'name' => 'Canine Distempa',
+                    'email' => 'kate@gmail.com',
                     'description' => 'Fatal infectious virus',
                     'frequency' => 'Annual',
                     'previous_date' => '2020-08-08',
@@ -34,6 +36,7 @@ class VaccinationSeeder extends Seeder
                 [
                     'user_id' => '1',
                     'name' => 'Anti-Pest',
+                    'email' => 'susan@gmail.com',
                     'description' => 'Vaccinate against ticks,mites,flees',
                     'frequency' => 'Quaterly',
                     'previous_date' => '2021-05-05',
@@ -42,6 +45,7 @@ class VaccinationSeeder extends Seeder
                 [
                     'user_id' => '2',
                     'name' => 'Rabies',
+                    'email' => 'kate@gmail.com',
                     'description' => 'Rabies is an incurable virus that attacks the brain and spinal cord.',
                     'frequency' => 'Annual',
                     'previous_date' => '2020-07-07',
@@ -50,6 +54,7 @@ class VaccinationSeeder extends Seeder
                 [
                     'user_id' => '2',
                     'name' => 'Dewormer',
+                    'email' => 'kate@gmail.com',
                     'description' => 'Keeps pet healthy and protected from worms',
                     'frequency' => 'Monthly',
                     'previous_date' => '2021-07-05',
@@ -58,6 +63,7 @@ class VaccinationSeeder extends Seeder
                 [
                     'user_id' => '2',
                     'name' => 'Anti-Pest',
+                    'email' => 'kate@gmail.com',
                     'description' => 'Vaccinate against ticks,mites,flees',
                     'frequency' => 'Quaterly',
                     'previous_date' => '2021-05-05',
@@ -66,6 +72,7 @@ class VaccinationSeeder extends Seeder
                 [
                     'user_id' => '1',
                     'name' => 'Dewormer',
+                    'email' => 'susan@gmail.com',
                     'description' => 'Keeps pet healthy and protected from worms',
                     'frequency' => 'Monthly',
                     'previous_date' => '2021-07-05',
@@ -85,6 +92,7 @@ class VaccinationSeeder extends Seeder
             Vaccination::create([
                    'user_id' => $vaccine['user_id'],
                    'name' => $vaccine['name'],
+                   'email' => $vaccine['email'],
                    'description' => $vaccine['description'],
                    'frequency' => $vaccine['frequency'],
                    'previous_date' => $vaccine['previous_date'],

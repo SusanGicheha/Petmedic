@@ -16,7 +16,15 @@
                 <div class="px-4 py-5 bg-white sm:p-6">
                             <label for="user_id" class="block font-medium text-sm text-gray-700">User Id</label>
                             <input type="number" name="user_id" id="user_id" type="number" class="form-input rounded-md shadow-sm mt-1 block w-full" value="{{ isset($vaccination) ? $vaccination->user_id :old('user_id') }}"   />
-
+<!--change email -->
+<div class="shadow overflow-hidden sm:rounded-md">
+                <div class="px-4 py-5 bg-white sm:p-6">
+                            <label for="email" class="block font-medium text-sm text-gray-700"> Email</label>
+                            <input type="email" name="email" id="email" type="email" value="{{ isset($vaccination) ? $vaccination->email :old('email') }}"  class="form-input rounded-md shadow-sm mt-1 block w-full" placeholder="Please enter name of person attending the appointment" value="{{ old('name') }}" />
+                            @if($errors->first('email'))
+                <div class="alert-danger" style="color: red;">{{$errors->first('email')}}</div>
+                @endif
+                </div> 
 <!--change name -->
 <div class="shadow overflow-hidden sm:rounded-md">
                 <div class="px-4 py-5 bg-white sm:p-6">
@@ -51,7 +59,7 @@
                             <div class="px-4 py-5 bg-white sm:p-6">
                                 <label for="previous_date" class="block font-medium text-sm text-gray-700">Previously Given</label>
                             <input type="date" name="previous_date" id="previous_date" type="date" class="form-input rounded-md shadow-sm mt-1 block w-full"
-                            value="{{isset($vaccination) ? $vaccination->next_date :old('previous_date') }}"  />
+                            value="{{isset($vaccination) ? $vaccination->previous_date :old('previous_date') }}"  />
                                    @if($errors->first('previous_date'))
                 <div class="alert-danger" style="color: red;">{{$errors->first('previous_date')}}</div>
                 @endif

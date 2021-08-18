@@ -27,6 +27,7 @@
           
           <th class="py-4 px-6 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-grey-light">Phone Number</th>
           <th class="py-4 px-6 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-grey-light">Date & Time</th>
+
           <th class="py-4 px-6 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-grey-light">Actions</th>
         </tr>
       </thead>
@@ -41,6 +42,7 @@
           <td class="py-4 px-6 border-b border-grey-light">{{$appointment->phone_number}}</td>
           
         <td class="py-4 px-6 border-b border-grey-light">{{$appointment->date_time}}</td>
+ 
           
            <td class="py-4 px-6 border-b border-grey-light">
            @role('user')

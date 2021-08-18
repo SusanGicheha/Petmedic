@@ -63,6 +63,14 @@
                
             <div id="image" align="center" style="padding:50px;">
             <img src="{{asset('/image/profile.svg') }}" class="block h-20 w-auto"  /> </div>
+              <!-- Profile Photo -->
+              @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
+                            <!-- Current Profile Photo -->
+                            <div class="mt-2" x-show="! photoPreview">
+                                <img src="{{asset('/image/$users->profile_photo_path') }}" alt="{{ $users->name }}" class="rounded-full h-40 w-40 object-cover">
+                            </div>
+                    @endif
+
 
             @role('user')
             <table align="center" >
@@ -85,7 +93,7 @@
 </table> 
 
 <x-jet-button class="mt-6" >Medical Records</x-jet-button>
-<x-jet-button><a type="button" href="{{ route('appointments.index') }}"
+<x-jet-button><a type="button" href="{{ route('appointments.show') }}"
                             class="px-0 py-0 ">
                             Book  Appointment</a></x-jet-button>
 <x-jet-button class="mt-6" ><a type="button" href="{{ route('vaccinations.show') }}"

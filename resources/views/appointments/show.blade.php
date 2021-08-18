@@ -27,6 +27,7 @@
           
           <th class="py-4 px-6 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-grey-light">Phone Number</th>
           <th class="py-4 px-6 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-grey-light">Date & Time</th>
+          
           <th class="py-4 px-6 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-grey-light">Actions</th>
         </tr>
       </thead>
@@ -41,7 +42,9 @@
           <td class="py-4 px-6 border-b border-grey-light">{{$appointment->phone_number}}</td>
           
         <td class="py-4 px-6 border-b border-grey-light">{{$appointment->date_time}}</td>
-          
+
+      <!--  <td class="py-4 px-6 border-b border-grey-light"><a type="button" href="{{ route ('appointments.booked', $appointment->id)}}" class="text-blue-600 hover:text-blue-900 mb-2 mr-2  btn btn-outline-primary btn-sm">View</a></td>
+-->
            <td class="py-4 px-6 border-b border-grey-light">
            @role('user')
             <a href="{{ route ('appointments.edit', $appointment->id) }}" class="text-blue-600 hover:text-blue-900 mb-2 mr-2  btn btn-outline-primary btn-sm">Edit</a>

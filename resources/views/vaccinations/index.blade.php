@@ -25,7 +25,7 @@
             @role('administrator')
         <th class="py-4 px-6 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-grey-light"></th>
         <th class="py-4 px-6 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-grey-light">UserId</th>
-          
+        <th class="py-4 px-6 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-grey-light">Email</th> 
           @endrole
           <th class="py-4 px-6 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-grey-light">Name</th>
           <th class="py-4 px-6 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-grey-light">Description</th>
@@ -43,6 +43,7 @@
           <td class="py-4 px-6 border-b border-grey-light">{{$vaccine->id}}</td>
          
           <td class="py-4 px-6 border-b border-grey-light">{{$vaccine->user_id}}</td>
+          <td class="py-4 px-6 border-b border-grey-light">{{$vaccine->email}}</td>
           @endrole
         <td class="py-4 px-6 border-b border-grey-light">{{$vaccine->name}}</td>
         <td class="py-4 px-6 border-b border-grey-light text-green-80">{{$vaccine->description}}</td>
@@ -53,6 +54,7 @@
            <td class="py-4 px-6 border-b border-grey-light">
 
             <a href="{{ route ('vaccinations.edit', $vaccine->id) }}" class="text-blue-600 hover:text-blue-900 mb-2 mr-2  btn btn-outline-primary btn-sm">Edit</a>
+            
             <form class="inline-block" action="{{ route('vaccinations.destroy', $vaccine->id) }}" method="POST" onsubmit="return confirm('Are you sure?');">
               <input type="hidden" class="hidden" name="_method" value="DELETE">
               <input type="hidden" class="hidden" name="_token" value="{{ csrf_token() }}">

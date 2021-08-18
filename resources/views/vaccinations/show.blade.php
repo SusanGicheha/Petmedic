@@ -45,7 +45,7 @@
 
         @else
         <tr class="hover:bg-grey-lighter">
-          <td class="py-4 px-6 border-b border-grey-light">You have no appointments set up</td>
+          <td class="py-4 px-6 border-b border-grey-light">You have no vaccinations set up</td>
          
         </tr>
        @endif

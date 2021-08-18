@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Laravel\Fortify\Contracts\CreatesNewUsers;
+use App\Notifications\WelcomeEmailNotification;
 use Laravel\Jetstream\Jetstream;
 
 class CreateNewUser implements CreatesNewUsers
@@ -33,7 +34,7 @@ class CreateNewUser implements CreatesNewUsers
             'profile_photo_path' => ['required', 'string', 'max:255'],
         ])->validate();
 
-        return User::create([
+        $user = User::create([
             'name' => $input['name'],
             'email' => $input['email'],
             'password' => Hash::make($input['password']),
@@ -44,6 +45,10 @@ class CreateNewUser implements CreatesNewUsers
             'date_of_birth' => $input['date_of_birth'],
             'profile_photo_path' => $input['profile_photo_path'],
 
-        ]);
+     ]);
+        $user->attachRole('user');
+        $user->notify(new WelcomeEmailNotification());
+
+        return $user;
     }
 }

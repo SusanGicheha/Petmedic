@@ -3,12 +3,16 @@
 namespace App\Http\Controllers;
 use App\Models\User;
 use App\Models\Admin;
-use App\Http\Requests\AdminRequest;
 use Illuminate\Http\Request;
+use App\Http\Requests\AdminRequest;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
+use App\Notifications\WelcomeEmailNotification;
+use App\Actions\Fortify\PasswordValidationRules;
 
 class UserListController extends Controller
-{
+{   
+    use PasswordValidationRules;
     public function index()
     {
         $users=User::all();
@@ -28,36 +32,36 @@ class UserListController extends Controller
     public function store(AdminRequest $request)
     {
 
-     
-        User::create($request->validated());
+        Validator::make($request->all(), [
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'phone_no' => ['required', 'string', 'max:255'],
+            'profile_photo_path' => ['required', 'string', 'max:255'],
+            'password' => $this->passwordRules(),
+           
+        ])->validate();
+
+        $users = User::create([
+        'name' => $request['name'],
+        'email' => $request['email'],
+        'password' => Hash::make($request['password']),
+        'phone_no' => $request['phone_no'],
+        'profile_photo_path' => $request['profile_photo_path'],
+        ]);
+    
+   
+
+    $users->attachRole('administrator');
+    $users->notify(new WelcomeEmailNotification());
+
+     $users->save();
+       
         return redirect()->route('users.index');
         
     }
-    function addData(Request $req)
-    {
-        $req->validate([
-            
-            'name' => 'required',
-            'email' => 'required|email',
-            'password' => 'required',
-            'password_confirmation' => 'required|same:password',
-            'phone_no' => 'required|numeric',
-            'profile_photo_path' => 'required',
-          
-        ]);
-      
-        $users = new User;
-        $users->name=$req->name;
-        $users->phone_no=$req->phone_no;
-        $users->email=$req->email;
-        $users->password=$req->password;
-      
-        $users->profile_photo_path=$req->profile_photo_path;
-        $users->save();
-        $req->user()->fill(['password'=>Hash::make($req->password)])->save();
-        return view('users.index');
-
-
+    function addData(array $input)
+    {    
+         
 
     }
 }
