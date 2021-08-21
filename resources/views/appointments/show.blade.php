@@ -48,6 +48,7 @@
            <td class="py-4 px-6 border-b border-grey-light">
            @role('user')
             <a href="{{ route ('appointments.edit', $appointment->id) }}" class="text-blue-600 hover:text-blue-900 mb-2 mr-2  btn btn-outline-primary btn-sm">Edit</a>
+            
 @endrole
 
    <form class="inline-block" action="{{ route('appointments.destroy', $appointment->id) }}" method="POST" onsubmit="return confirm('Are you sure?');">

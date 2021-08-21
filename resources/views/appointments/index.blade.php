@@ -49,6 +49,7 @@
             <a href="{{ route ('appointments.edit', $appointment->id) }}" class="text-blue-600 hover:text-blue-900 mb-2 mr-2  btn btn-outline-primary btn-sm">Edit</a>
 @endrole
 
+
    <form class="inline-block" action="{{ route('appointments.destroy', $appointment->id) }}" method="POST" onsubmit="return confirm('Are you sure?');">
               <input type="hidden" class="hidden" name="_method" value="DELETE">
               <input type="hidden" class="hidden" name="_token" value="{{ csrf_token() }}">

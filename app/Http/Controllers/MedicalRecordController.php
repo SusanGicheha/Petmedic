@@ -54,6 +54,7 @@ class MedicalRecordController extends Controller
         
     }
 
+
    
     public function show($id)
     {
@@ -62,16 +63,12 @@ class MedicalRecordController extends Controller
     }
 
     
-    public function edit($id)
+    public function edit(MedicalRecord $medicalrecord)
     {
-        $medicalrecords=MedicalRecord::find($id);
-        return view('medicalrecords.edit',compact('medicalrecords'));
+        $medicalrecords=MedicalRecord::all();
+        return view('medicalrecords.edit',compact('medicalrecords','medicalrecord'));
     }
-    public function view()
-    {
-        $medicalrecords=MedicalRecord::where('user_id', Auth::user()->id)->get();
-        return view('medicalrecords.view',compact('medicalrecords'));
-    }
+    
   
     public function update(UpdateMedicalRecordRequest $request,MedicalRecord $medicalrecords)
     {
@@ -84,9 +81,6 @@ class MedicalRecordController extends Controller
    
     public function destroy($id)
     {
-       // $medicalrecords->delete();
-
-        //return redirect()->route('medicalrecords.index',$medicalrecords->id)->with('success','Record deleted successfully');
 
         $medicalrecords = MedicalRecord::find($id);
         $prev_filename=$medicalrecords->file_name;

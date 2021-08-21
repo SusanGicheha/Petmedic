@@ -37,6 +37,7 @@ Route::get('/medicalrecords/show',[MedicalRecordController::class, 'show'])->nam
 Route::get('/medicalrecords/view',[MedicalRecordController::class, 'show'])->name('medicalrecords.view');
 Route::get('/vaccinations/show',[VaccinationController::class, 'show'])->name('vaccinations.show');
 Route::get('/appointments/show',[AppointmentController::class, 'show'])->name('appointments.show');
+
 Route::get('/booked',[AppointmentController::class, 'booked'])->name('appointments.booked');
 Route::post('/medicalrecords/store',[MedicalRecordController::class, 'store'])->name('medicalrecords.store');
 Route::post('/appointments/create',[AppointmentController::class, 'addData']);

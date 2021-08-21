@@ -5,7 +5,7 @@
         </div>
     </x-slot>
         <div class="container-fluid">
-        <iframe src ="{{ asset('/storage/medicalrecords/1629184893.pdf') }}" class="responsive-iframe" width="1600px" height="600px"></iframe>
+        <iframe src ="{{ asset('/storage/medicalrecords/1629184893.pdf') }}" class="responsive-iframe" width="1300px" height="600px"></iframe>
         </div>
     
     

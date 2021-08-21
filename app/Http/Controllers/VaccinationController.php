@@ -24,7 +24,7 @@ class VaccinationController extends Controller
         $vaccinations=Vaccination::where('user_id', Auth::user()->id)->get();
         return view('vaccinations.show',compact('vaccinations'));
     }
-
+    
   
     public function create()
     {

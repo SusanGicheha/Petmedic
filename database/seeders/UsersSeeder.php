@@ -35,7 +35,8 @@ class UsersSeeder extends Seeder
                 'pet_name' => 'Kori',
                 'pet_breed' => 'German',
                 'pet_gender' => 'Female',
-                'date_of_birth' => '2021-02-01',
+                'date_of_birth' => '2021-02-01'
+                
             ],
 
             [
@@ -47,7 +48,8 @@ class UsersSeeder extends Seeder
                 'pet_name' => 'NA',
                 'pet_breed' =>'NA',
                 'pet_gender' =>'NA',
-                'date_of_birth' =>'2021-01-01'
+                'date_of_birth' =>'2021-01-01',
+               
             ],
             [
                 'name' => 'Dr Fatma',
@@ -58,7 +60,8 @@ class UsersSeeder extends Seeder
                 'pet_name' => 'NA',
                 'pet_breed' =>'NA',
                 'pet_gender' =>'NA',
-                'date_of_birth' =>'2021-01-01'
+                'date_of_birth' =>'2021-01-01',
+               
             ],   
         ];
         foreach ($users as $user) {

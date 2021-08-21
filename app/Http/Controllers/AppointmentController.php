@@ -46,6 +46,11 @@ class AppointmentController extends Controller
         return redirect()->route('appointments.show',compact('user'));
 
     }
+    public function view()
+    {
+        $appointment=Appointment::where('user_id', Auth::user()->id)->get();
+        return view('appointments.view',compact('appointment'));
+    }
 
     
     public function show()

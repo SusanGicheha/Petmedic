@@ -21,17 +21,13 @@
                         {{ __('List of Users') }}
                     </x-jet-nav-link>
                     @endrole
-<<<<<<< HEAD
                     @role('administrator')
-                    <x-jet-nav-link class="link font-bold text-base" href="{{ route ('appointments.index') }}" :active="request()->routeIs('appointments.index')" >
-=======
-                    <x-jet-nav-link class="link font-black text-gray-900 text-lg" href="{{ route ('appointments.index') }}" :active="request()->routeIs('appointments.index')" >
->>>>>>> 6b8e31e628ec00c9ef2a8854bdf4f8acbfe2ba3f
+                    <x-jet-nav-link class="link font-bold text-gray-900 text-lg" href="{{ route ('appointments.index') }}" :active="request()->routeIs('appointments.index')" >
                         {{ __('Appointments') }}
                     </x-jet-nav-link>
                     @endrole
                     @role('user')
-                    <x-jet-nav-link class="link font-bold text-base" href="{{ route ('appointments.show') }}" >
+                    <x-jet-nav-link class="link font-bold text-gray-900 text-lg" href="{{ route ('appointments.show') }}" >
                         {{ __('Appointments') }}
                     </x-jet-nav-link>
                     @endrole
@@ -46,7 +42,7 @@
                     </x-jet-nav-link> 
                     @endrole
                     @role('user')
-                    <x-jet-nav-link class="link font-black text-gray-900 text-lg"  href="{{ route('medicalrecords.index') }}">
+                    <x-jet-nav-link class="link font-black text-gray-900 text-lg"  href="{{ route('medicalrecords.show') }}">
                         {{__('Medical Records') }}
                     </x-jet-nav-link>
                     @endrole
