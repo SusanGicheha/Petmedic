@@ -17,7 +17,7 @@
                 <div><h1 style="font-weight:bold; font-size:x-large; color:#3353a3">Edit Medical Record</h1></div>
                 
 
-                <form action="{{ route('medicalrecords.update',['medicalrecord'=>$medicalrecord->id]) }}" enctype="multipart/form-data" method="POST">
+                <form  method="post" action="{{ route('medicalrecords.update',['medicalrecord'=>$medicalrecord->id]) }}" enctype="multipart/form-data" method="POST">
                     @csrf
                     
                     <div class="form-group">

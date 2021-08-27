@@ -30,7 +30,7 @@ class CreateNewUser implements CreatesNewUsers
             'phone_no' => ['required', 'string', 'max:255'],
             'pet_gender' => ['required', 'string', 'max:255'],
             'pet_breed' => ['required', 'string', 'max:255'],
-            'date_of_birth' => ['required', 'string', 'max:255'],
+            'date_of_birth' => ['required', 'string','before:today', 'max:255'],
             'profile_photo_path' => ['required', 'string', 'max:255'],
         ])->validate();
 

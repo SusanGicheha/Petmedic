@@ -75,7 +75,7 @@ class MedicalRecordController extends Controller
         $medicalrecords=MedicalRecord::all();
         
 
-        return view('medicalrecords.update' ,compact('medicalrecord','medicalrecords'));
+        return view('medicalrecords.index' ,compact('medicalrecord','medicalrecords'));
     }
 
    
