@@ -14,7 +14,7 @@
                 </div>
             @endif
             <div class="bg-white shadow-md border rounded sm:px-6 lg:px-8 flex flex-col py-8">
-                <div><h1 style="font-weight:bold; font-size:x-large; color:#3353a3">Edit Medical Record</h1></div>
+                <div><h1 style="font-weight:bold; font-size:x-large; ">Edit Medical Record</h1></div>
                 
 
                 <form  method="post" action="{{ route('medicalrecords.update',['medicalrecord'=>$medicalrecord->id]) }}" enctype="multipart/form-data" method="POST">
@@ -42,8 +42,8 @@
                     </div>
            
                     <div class="mt-10 form-group p-5">
-                    <h2 class="place-self-center" style="font-weight: bold; color:#d4a95b "> Medical Record</h2><br>
-                           <div class="text-center p-5"><input class="form-control form-control-lg w-full h-full border"style="font-size:large; border-color:#3353a3" id="file" type="file" name="file" /></div>
+                    <h2 class="place-self-center" style="font-weight: bold;  "> Medical Record File</h2><br>
+                           <div class="text-center p-5"><input class="form-control form-control-lg w-full h-full border" id="file" type="file" name="file" /></div>
                     </div><br><br>
                     <div class="container text-right form-group">
                         {{-- <input type="submit"class="button-bg-blue px-5 bg-#3353a3 place-self-center py-2 border rounded transition
